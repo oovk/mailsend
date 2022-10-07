@@ -3,6 +3,7 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import subprocess
 import os
+import sys
 
 def email_new(sender, recipient,msg,config):
     message = MIMEMultipart()
@@ -20,8 +21,11 @@ def email_new(sender, recipient,msg,config):
         server.sendmail(sender,recipient, message.as_string())
 
 if __name__ == '__main__':
-    sender = 'vaibhavk0011@outlook.com'
-    recipient = 'khandekarv0@gmail.com'
-    config = subprocess.getoutput(['lscpu'])
-    msg = "Service XYZ has planned maintenance on Saturday from 14:00 till 17:00 CET"
+    sender = sys.argv[1]
+    recipient = sys.argv[2] 
+    config = sys.argv[3]
+    msg = sys.argv[4]
     email_new(sender,recipient,msg,config)
+
+  
+    

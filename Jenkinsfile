@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'python3 main.py'
-        sh 'lscpu'
+        sh 'python3 main.py ${sender} ${recipient} ${serverconfig} ${msg}'
       }
     }
   }
