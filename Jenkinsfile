@@ -4,6 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh 'python3 main.py'
+        sh 'lscpu'
       }
     }
   }
