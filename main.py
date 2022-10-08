@@ -26,6 +26,4 @@ if __name__ == '__main__':
     config = sys.argv[3]
     msg = sys.argv[4]
     email_new(sender,recipient,msg,config)
-
-  
     
